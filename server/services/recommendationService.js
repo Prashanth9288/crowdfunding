@@ -10,7 +10,7 @@ const vectorize = (campaign) => {
     
     // 2. Normalize goal (Log scale to handle large variance)
     // We assume a reasonable range, e.g., log10(goal). 
-    // A goal of 1000 -> 3, 100000 -> 5. We divide by max likely (e.g. 7 for 10M) to keep in 0-1 range approx.
+    // A goal of 1000 -> 3, 100000 -> 5. We divide by max likely (e.g. 7 for 10M) to keep in 0-1 range approx
     const goalFeature = Math.min(Math.log10(campaign.goalAmount || 1000) / 7, 1);
 
     return [...catVector, goalFeature];
@@ -31,7 +31,6 @@ const addVectors = (vecA, vecB) => {
     return vecA.map((a, i) => a + vecB[i]);
 };
 
-// Helper: Scale vector
 const scaleVector = (vec, scalar) => {
     return vec.map(a => a * scalar);
 };
