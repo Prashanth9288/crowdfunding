@@ -19,7 +19,7 @@ const CampaignDetails = () => {
     useEffect(() => {
         const fetchCampaign = async () => {
             try {
-                const res = await fetch(`http://localhost:5000/api/campaigns/${id}`);
+                const res = await fetch(`https://crowdfunding-0rtd.onrender.com/api/campaigns/${id}`);
                 if (!res.ok) throw new Error("Campaign not found");
                 const data = await res.json();
                 setCampaign(data);
@@ -47,7 +47,7 @@ const CampaignDetails = () => {
         }
 
         try {
-            const res = await fetch(`http://localhost:5000/api/campaigns/${id}/donate`, {
+            const res = await fetch(`https://crowdfunding-0rtd.onrender.com/api/campaigns/${id}/donate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 

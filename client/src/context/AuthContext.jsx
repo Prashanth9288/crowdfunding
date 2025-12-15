@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   // Sync user with backend after login/signup
   const syncUserWithBackend = async (firebaseUser, additionalData = {}) => {
       try {
-          const response = await fetch('http://localhost:5000/api/auth/sync', {
+          const response = await fetch('https://crowdfunding-0rtd.onrender.com/api/auth/sync', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({

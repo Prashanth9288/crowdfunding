@@ -32,7 +32,7 @@ const Dashboard = () => {
       const fetchCampaigns = async () => {
           if (user?.uid) {
               try {
-                  const res = await fetch(`http://localhost:5000/api/campaigns/user/${user.uid}`);
+                  const res = await fetch(`https://crowdfunding-0rtd.onrender.com/api/campaigns/user/${user.uid}`);
                   const data = await res.json();
                   setCampaigns(data);
                   

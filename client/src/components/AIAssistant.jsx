@@ -35,7 +35,7 @@ const AIAssistant = () => {
         setIsTyping(true);
 
         try {
-            const res = await fetch(`http://localhost:5000/api/campaigns/recommendations/${user.uid}`);
+            const res = await fetch(`https://crowdfunding-0rtd.onrender.com/api/campaigns/recommendations/${user.uid}`);
             const data = await res.json();
             
             setTimeout(() => {
@@ -65,8 +65,8 @@ const AIAssistant = () => {
         setIsTyping(true);
         try {
             const endpoint = query 
-                ? `http://localhost:5000/api/campaigns/search?term=${encodeURIComponent(query)}`
-                : `http://localhost:5000/api/campaigns/search`; 
+                ? `https://crowdfunding-0rtd.onrender.com/api/campaigns/search?term=${encodeURIComponent(query)}`
+                : `https://crowdfunding-0rtd.onrender.com/api/campaigns/search`; 
             
             const res = await fetch(endpoint);
             const data = await res.json();

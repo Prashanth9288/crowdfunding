@@ -20,7 +20,7 @@ const BackedProjects = () => {
         const fetchBackedCampaigns = async () => {
             if (user?.uid) {
                 try {
-                    const res = await fetch(`http://localhost:5000/api/campaigns/backed/${user.uid}`);
+                    const res = await fetch(`https://crowdfunding-0rtd.onrender.com/api/campaigns/backed/${user.uid}`);
                     const data = await res.json();
                     setCampaigns(data);
                 } catch (error) {
